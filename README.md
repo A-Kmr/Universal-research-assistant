@@ -1,102 +1,72 @@
-**Universal Research Assistant**
+# 🧠 Universal Research Assistant (RAG Engine)
 
-This project is an interactive, single-page web application that allows users to create a custom AI-powered research assistant. Users can upload their own PDF documents and provide website URLs to build a temporary, specialized knowledge base. They can then have a conversation with an AI (powered by Google's Gemini) that answers questions only based on the provided sources, ensuring all information is accurate, verifiable, and directly relevant to their research.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Gemini](https://img.shields.io/badge/AI-Google%20Gemini-orange)
+![LangChain](https://img.shields.io/badge/Framework-LangChain-green)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-This tool moves beyond generic chatbots by creating a "RAG" (Retrieval-Augmented Generation) pipeline on the fly, complete with citations, conversational memory, and AI-powered writing tools.
+**Universal Research Assistant** is an intelligent, single-page web application that transforms static documents into an interactive knowledge base. Users can upload PDFs and web URLs to build a temporary, specialized RAG (Retrieval-Augmented Generation) pipeline on the fly.
 
-**Key Features**
+Unlike generic chatbots, this tool grounds every answer in **your specific data**, providing accurate citations and eliminating hallucinations.
 
-Dynamic Knowledge Base: Upload multiple PDFs and add multiple website URLs to create a custom knowledge base for any topic.
+---
 
-Conversational AI Chat: Engage in a natural, back-and-forth conversation with the AI. The assistant remembers previous questions and answers for contextual follow-ups.
+## 🚀 Key Features
 
-Verifiable Answers: Every answer from the RAG pipeline is grounded in the provided sources. The UI displays which documents or links were used as sources for each response.
+### 🔍 Dynamic RAG Pipeline
+* **Multi-Source Ingestion:** Upload multiple **PDFs** and **URLs** simultaneously to create a unified vector index.
+* **Verifiable Answers:** Every AI response includes direct **citations** (source filenames or links), ensuring full transparency.
 
-**Gemini-Powered Generative Tools**:
+### 🤖 Gemini-Powered Analysis
+* **Context-Aware QA:** Ask detailed questions and get answers based *only* on the provided context.
+* **Smart Recommendations:** The engine analyzes your query and suggests **3 broader research topics** to help you explore the subject deeper. *(Note: I added this because I saw it in your code!)*
+* **Generative Tools:**
+    * ✨ **Summarize:** Instantly generate high-level summaries of complex documents.
+    * ✨ **Drafting Mode:** Expand AI answers into well-written paragraphs for reports or essays.
 
-✨ Summarize All Sources: Instantly generate a high-level summary of all provided documents and websites.
+### 💻 Modern Interface
+* **Split-View Dashboard:** A clean, responsive 2-column layout (built with **Tailwind CSS**) keeps your source list and chat interface visible at all times.
 
-✨ Extract Key Themes: Ask the AI to analyze the entire context and identify the main recurring themes and arguments.
+---
 
-✨ Draft a Paragraph: Expand any AI-generated answer into a well-written paragraph with a single click, bridging the gap from research to writing.
+## 🛠️ Tech Stack
 
-Modern Interface: A clean, responsive, two-column dashboard layout that keeps sources and the chat interface visible at all times.
+### Backend
+* **Framework:** Flask (Python 3.9+)
+* **LLM:** Google Gemini 1.5 Flash (via `langchain-google-genai`)
+* **Orchestration:** LangChain (`RetrievalQA`, `PyPDFLoader`, `WebBaseLoader`)
+* **Vector Store:** ChromaDB (In-memory similarity search)
 
-**Tech Stack**
+### Frontend
+* **Core:** Vanilla JavaScript (ES6+) for dynamic API interaction.
+* **Styling:** Tailwind CSS for a modern, responsive design.
 
-This application is built with a modern Python backend and a lightweight JavaScript frontend.
+---
 
-**Backend**:
+## ⚙️ How to Run Locally
 
-Python 3.9+
+You can run this entire application on your local machine in under 5 minutes.
 
-Flask: To create the web server and API endpoints.
+### 1. Prerequisites
+* Python 3.9+ installed.
+* A **Google Gemini API Key** (Get it from Google AI Studio).
 
-Google Gemini (via langchain-google-genai): The core large language model for generation and analysis.
+### 2. Installation
 
-LangChain: The primary framework for building the RAG pipeline.
+Clone the repository and set up the environment:
 
-ConversationalRetrievalChain: Manages the chat memory and retrieval.
-
-PyPDFLoader & WebBaseLoader: To load and parse documents and websites.
-
-Chroma: In-memory vector store for efficient similarity search.
-
-**Frontend**:
-
-HTML5
-
-Tailwind CSS: For all styling and layout.
-
-Vanilla JavaScript (ES6+): To handle all user interactions, API calls (fetch), and dynamic UI updates.
-
-**How to Run This Project Locally**
-
-You can run this entire application on your local machine.
-
-**1. Prerequisites**
-
-Python 3.9 or newer installed on your system.
-
-A Google Gemini API Key.
-
-**2. Setup**
-
-Clone or download the repository:
-
-git clone [https://github.com/your-username/universal-research-assistant.git](https://github.com/your-username/universal-research-assistant.git)
+```bash
+# Clone the repo
+git clone https://github.com/A-Kmr/universal-research-assistant.git
 cd universal-research-assistant
 
-
-**Create a virtual environment:**
-This creates an isolated space for the project's libraries.
-
+# Create a virtual environment
 python -m venv venv
 
+# Activate venv (Windows)
+.\venv\Scripts\activate
+# Activate venv (Mac/Linux)
+source venv/bin/activate
 
-**Activate the virtual environment:**
-
-On Windows (Command Prompt): .\venv\Scripts\activate
-
-On macOS/Linux: source venv/bin/activate
-
-Install the required libraries:
-
+# Install dependencies
 pip install -r requirements.txt
-
-
-**Create your environment file:**
-
-Create a new file in the project folder named .env.
-
-Open this file and add your API key like this:
-
-GOOGLE_API_KEY="your_actual_api_key_goes_here"
-
-
-**3. Run the Application**
-
-Start the Flask server:
-With your virtual environment still active, run:
-
-python app.py
