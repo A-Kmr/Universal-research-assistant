@@ -57,7 +57,7 @@ Clone the repository and set up the environment:
 
 ```bash
 # Clone the repo
-git clone [https://github.com/your-username/universal-research-assistant.git](https://github.com/your-username/universal-research-assistant.git)
+git clone https://github.com/A-Kmr/universal-research-assistant.git
 cd universal-research-assistant
 
 # Create a virtual environment
