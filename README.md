@@ -19,7 +19,7 @@ Unlike generic chatbots, this tool grounds every answer in **your specific data*
 
 ### 🤖 Gemini-Powered Analysis
 * **Context-Aware QA:** Ask detailed questions and get answers based *only* on the provided context.
-* **Smart Recommendations:** The engine analyzes your query and suggests **3 broader research topics** to help you explore the subject deeper. *(Note: I added this because I saw it in your code!)*
+* **Smart Recommendations:** The engine analyzes your query and suggests **3 broader research topics** to help you explore the subject deeper.
 * **Generative Tools:**
     * ✨ **Summarize:** Instantly generate high-level summaries of complex documents.
     * ✨ **Drafting Mode:** Expand AI answers into well-written paragraphs for reports or essays.
@@ -48,7 +48,7 @@ Unlike generic chatbots, this tool grounds every answer in **your specific data*
 You can run this entire application on your local machine in under 5 minutes.
 
 ### 1. Prerequisites
-* Python 3.9+ installed.
+* Python 3.9+ installed on your system.
 * A **Google Gemini API Key** (Get it from Google AI Studio).
 
 ### 2. Installation
@@ -57,7 +57,7 @@ Clone the repository and set up the environment:
 
 ```bash
 # Clone the repo
-git clone https://github.com/A-Kmr/universal-research-assistant.git
+git clone [https://github.com/your-username/universal-research-assistant.git](https://github.com/your-username/universal-research-assistant.git)
 cd universal-research-assistant
 
 # Create a virtual environment
@@ -65,8 +65,21 @@ python -m venv venv
 
 # Activate venv (Windows)
 .\venv\Scripts\activate
+
 # Activate venv (Mac/Linux)
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+### 3. Configuration
+Create a .env file in the root directory and add your API key:
+
+# Code snippet
+GOOGLE_API_KEY="your_actual_api_key_goes_here"
+
+### 4. Start the Application
+Run the Flask server:
+
+# Bash
+python app.py
